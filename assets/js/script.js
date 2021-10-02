@@ -1,6 +1,7 @@
-var searchHistory=[];
+var searchHistory = [];
 var APIkey = "ea3cc374537ac734a5e9057bfff093d4";
-var rootURL = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}";
+var rootURL =
+  "https://api.openweathermap.org/";
 
 var searchForm = document.querySelector("#search-form");
 var searchInput = document.querySelector("#search-input");
@@ -9,24 +10,27 @@ var forecastWeather = document.querySelector("#forecast");
 var searchHistoryContainer = document.querySelector("#history");
 
 function getLatLong(event) {
-    event.preventDefault();
-    console.log(event);
-    var city=searchInput.value.trim();
-    var coordinatesURL = rootURL + "/geo/1.0/direct?q=" + city + "&limit=5&appid=" + APIkey;
-    console.log(city);
+  event.preventDefault();
+  console.log(event);
+  var city = searchInput.value.trim();
+  var coordinatesURL =
+    rootURL + "/geo/1.0/direct?q=" + city + "&limit=5&appid=" + APIkey;
+  console.log(city);
 
-
-    fetch(coordinatesURL)
+  fetch(coordinatesURL)
     .then(function (response) {
-        return response.json()
-    }). then(function(data){
-        console.log(data);
+      return response.json();
     })
+    .then(function (data) {
+      console.log(data);
+      console.log(data[0].lat, data[0].lon)
+      console.log(data[0].lat, data[0].lon)
+    });
 }
 
+function getWeather(lat, lon) {
+    console.log("inside getWeather( function");
+    console.log(lat, lon);
+}
 
-
-
-searchForm.addEventListener("submit", getLatLong)
-
-
+searchForm.addEventListener("submit", getLatLong);
