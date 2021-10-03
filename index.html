@@ -4,18 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-
+    <title>Weather Dashboard</title>
 </head>
 
 <body>
+
+    <header>Weather Dashboard</header>
+    <main>
+        <aside id="searchBox">
+            <h1>Search for a city:</h1>
+            <input type="text" placeholder="City Name" id="city-search">
+            <br>
+            <button id="searchBtn">Search</button>
+            <div id="cityButtons"></div>
+        </aside>
+
+        
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+
     <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
         <h1>Weather Dashboard</h1>
     </header>
 
-    <div class="tontainer-fluid" style="max-width: 1400px">
+    <div class="container-fluid" style="max-width: 1400px">
         <div clas="row">
             <aside class="col-lg-3 pb-3">
                 <h2 id="form-heading" class="mt-1 h3 form-label">Search for a City:</h2>
@@ -69,7 +93,7 @@
 
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>
