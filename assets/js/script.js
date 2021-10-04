@@ -14,7 +14,7 @@ var forecastEL = document.getElementById("forecast")
 var forecastBlock = document.getElementById("div")
 var colorBlock = document.getElementById(".color")
 
-
+// Search History Button
 searchHistoryBtn();
 var appDate = function (time) {
     var displayDate = new Date ();
@@ -24,6 +24,24 @@ var appDate = function (time) {
     var y = displayDate.getFullYear();
     return mm + "/" + dd + "/" + y;
 }
+
+
+var formSubmitHandler = function (event) {
+    event.preventDefault();
+
+    // get City Name from input element
+    var cityName = searchCityEl.value.trim();
+
+    if(cityName) {
+        getInitialData(cityName);
+        searchCityEl.value="";
+        history(cityname);
+    } else {
+        alert("Please enter a valid city");
+    }
+};
+
+
 
 
 
