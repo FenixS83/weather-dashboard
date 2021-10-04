@@ -93,16 +93,23 @@ var getMainData = function (lat, lon, cityName) {
             colorBlock.classList.remove("green");
         }
 
-        
+        $ (forecastBlock).empty()
 
+        for (let i=1; i < 6; i++) {
+            var forecastBlock = document.createElement("div")
+            forecastBlock.classList.add("fblock")
+            forecastBlock.classList.add("col")
 
+            $(forecastBlock).append(appDate(data.daily[i].dt));
+            $(forecastBlock).append(`<img src="https://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png"/>`);
+            $(forecastBlock).append("<p>TEmp: " + data.daily[i].temp.day + " °F</p>");
+            $(forecastBlock).append("<p>Wind: " + data.daily[i].wind_speed + " MPH</p>");
+            $(forecastBlock).append("<p>Humidity: " + data.daily[i].humidity + " %</p>");
 
+            $(forecastEL).append(forecastBlock)
+        }
 
-
-
-
-    })
-
+    });
 
 }
 
