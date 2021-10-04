@@ -70,6 +70,29 @@ var getMainData = function (lat, lon, cityName) {
         console.log(data);
 
         boldDataEL.innerHTML = `<span class="bold">${cityName}  (${appDate(data.current.dt)}) </span> <img src="https://openweathermap.org/img/w/${data.current.weather[0].icon}.png" /> `;
+        tempMainEl.innerHTML = `Temp: ${data.current.temp} &186F`
+        windMainEl.innerHTML = `Wind: ${data.current.wind_speed} MPH`
+        humidMainEl.innerHTML = `Humidity: ${data.current.humidity} %`
+        uvMainEl.innerHTML = `UV Index: <span class = "color">  ${data.current.uvi}  </span>`
+        $(".main").addClass("mainDisplay")
+
+
+        if (data.current.uvi <= 2) {
+            $(".color").addClass("green");
+            $(".color").removeClass("yellow");
+            $(".color").removeClass("red");
+
+        } else if (data.current.uvi <=5) {
+            colorBlock.classList.add("yellow");
+            colorBlock.classList.remove("green");
+            colorBlock.classList.remove("red");
+
+        } else {
+            colorBlock.classList.add("red");
+            colorBlock.classList.remove("yellow");
+            colorBlock.classList.remove("green");
+        }
+
         
 
 
