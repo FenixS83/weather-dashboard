@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(#4169e1, #8641e1);
+    padding: 15px;
+    color: aliceblue;
+    margin-bottom: 15px;
+}
+
+#forecast {
+    justify-content: space-between;
+}
+
+.fBlock {
+    background-color: grey;
+    color: white;
+    margin: 10px;
+}
+
