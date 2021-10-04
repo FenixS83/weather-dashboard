@@ -61,7 +61,7 @@ var getInitialData = function (cityName) {
 
 // function involving OneCall API
 var getMainData = function (lat, lon, cityName) {
-    var secondApi = rootURL + `/data/2.5/onecall?lat=` + lat + `&lon=` + lon + `&appid=` APIkey;
+    var secondApi = rootURL + `/data/2.5/onecall?lat=` + lat + `&lon=` + lon + `&appid=` + APIkey;
 
     fetch(secondApi)
     .then(function (response) {
@@ -112,6 +112,23 @@ var getMainData = function (lat, lon, cityName) {
     });
 
 }
+
+
+
+function history(cityName) {
+    $("#historyButtons").empty();
+    var savedCity = localStorage.getItem("cities")
+    var cityConditional = savedCity ? JSON.parse(savedCity) : [];
+    var currentCity = {cities: cityName}
+
+    cityConditional.push(currentCity);
+
+    localStorage.setItem("cities", JSON.stringify(cityConditional))
+
+    searchHistoryBtn
+}
+
+
 
 
 
