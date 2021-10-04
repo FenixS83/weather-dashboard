@@ -128,118 +128,24 @@ function history(cityName) {
     searchHistoryBtn
 }
 
+function searchHistoryBtn() {
+    var cityList    = localStorage.getItem("cities")
+    listConditional = cityList ? JSON.parse(cityList) : []
 
+    for (let i=0; i < listConditional.length; i++) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var searchHistory = [];
-var searchForm = document.querySelector(`#search-form`);
-var searchInput = document.querySelector(`#search-input`);
-var currentWeather = document.querySelector(`#today`);
-var forecastWeather = document.querySelector(`#forecast`);
-var searchHistoryContainer = document.querySelector(`#history`);
-
-var city;
-var searchForm;
-
-
-function getLatLong(event) {
-  event.preventDefault();
-  console.log(event);
-  var city = searchInput.value.trim();
-  var coordinatesURL =
-    rootURL + `/geo/1.0/direct?q=` + city + `&limit=5&appid=` + APIkey;
-  console.log(city);
-
-  fetch(coordinatesURL)
-    .then(function (response) {
-        if(response[0] != undefined) {
-            var lat = response[0].lat
-            var lon = response[0].lon
-        }
-
-
-
-
-        return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      console.log(data[0].lat, data[0].lon)
-      console.log(data[0].lat, data[0].lon)
-      var lat = data[0].lat;
-      var lon = data[0].lon;
-    });
+        var historyBtn = document.createElement("button")
+        historyBtn.setAttribute("data", (listConditional[i].cities))
+        historyBtn.classList.add("buttons")
+        historyBtn.textContent = (listConditional[i].cities)
+        $("#historyButtons").append(historyBtn);
+    }
 }
 
-function getWeather(lat, lon) {
-    console.log(`inside getWeather( function`);
-    console.log(lat, lon);
-}
-
-searchForm.addEventListener(`submit`, getLatLong);
+$("#historyButtons").on("click", function (event) {
+    getInitialData(event.target.textContent)
+})
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+searchBtnEl.addEventListener(`click`, formSubmitHandler)
 
