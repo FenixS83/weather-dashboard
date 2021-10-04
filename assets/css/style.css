@@ -38,5 +38,18 @@ header {
     padding: 15px;
 }
 
+.bold {
+    font-weight: bold;
+    font-size: large;
+}
 
+.color { 
+    padding: 8px 25px;
+    border-radius: 10px;
+}
+
+#searchBtn, .buttons {
+    width: 100%;
+    border-radius: 8px;
+}
 

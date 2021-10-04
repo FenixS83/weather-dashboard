@@ -35,7 +35,7 @@ var formSubmitHandler = function (event) {
     if(cityName) {
         getInitialData(cityName);
         searchCityEl.value=``;
-        history(cityname);
+        history(cityName);
     } else {
         alert(`Please enter a valid city`);
     }
@@ -61,7 +61,7 @@ var getInitialData = function (cityName) {
 
 // function involving OneCall API
 var getMainData = function (lat, lon, cityName) {
-    var secondApi = rootURL + `/data/2.5/onecall?lat=` + lat + `&lon=` + lon + `&appid=` + APIkey;
+    var secondApi = rootURL + `/data/2.5/onecall?lat=` + lat + `&lon=` + lon + `&exclude=hourly,minutely&units=imperial&appid=` + APIkey;
 
     fetch(secondApi)
     .then(function (response) {
