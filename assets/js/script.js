@@ -1,3 +1,26 @@
+var searchBtnEl = document.getElementById("searchBtn")
+var searchCityEl = document.getElementById("searchCity")
+var boldDataEL = document.getElementById("boldData")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var searchHistory = [];
 var APIkey = "ea3cc374537ac734a5e9057bfff093d4";
 var rootURL = "https://api.openweathermap.org/";
