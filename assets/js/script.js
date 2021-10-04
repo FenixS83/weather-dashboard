@@ -41,7 +41,20 @@ var formSubmitHandler = function (event) {
     }
 };
 
+var getInitialData = function (cityName) {
+    var firstApi = rootURL + "/geo/1.0/direct?q=" + cityName + "&limit=5&appid=" + APIkey;
 
+    fetch(firstApi).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                var log = data[0].lon;
+                var lat = data[0].lat;
+                getMainData(lat, log, cityName)
+            });
+            
+        }
+    })
+}
 
 
 
