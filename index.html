@@ -9,43 +9,117 @@
     <title>Weather Dashboard</title>
 </head>
 
+<body class="container">
+    <header class="header">
+        <h1 class="heading">Weather Dashboard</h1>
+    </header>
+
+    <main>
+
+        <div class="row">
+            <div class="col col-md-3">
+                <div class="card" id="searchCard">
+                    <h3 class="card-header text-uppercase">Search for a City:</h3>
+                    <form id="user-form" class="card-body">
+                        <input name="search" id="searchCity" type="text" class="form-input input-group mb-3" placeholder="Denver"/>
+                        <button type="submit" class="btn-primary" id="searchBtn">Search</button>
+
+                    </form>
+
+                </div>
+
+                <hr>
+
+                <!-- div for dynamic history buttons -->
+                <div id="historyButtons">
+                </div>
+
+            </div>
 
 
+            <div class="col col-md-8">
+                <!-- div for display -->
+                <div class="container main">
+                    <div class="col" id="boldData"><b></b></div>
+                    <div class="col" id="tempMain"></div>
+                    <br>
+                    <div class="col" id="windMain"></div>
+                    <br>
+                    <span class="col" id="uvMain"></span>
+
+                </div>
+
+                <!-- div for 5 day forecast -->
+                <div class="col">
+                    <div class="container">
+                        <div class="row" id="forecast">
+                        </div>
+                    </div>
+                </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </div>
 
         </div>
 
-
-
-
-
-
-
     </main>
+
+
+
+
+
+
+
+
+    
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
