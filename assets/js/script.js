@@ -41,19 +41,30 @@ var formSubmitHandler = function (event) {
     }
 };
 
+// function involving Geocoding API
 var getInitialData = function (cityName) {
     var firstApi = rootURL + "/geo/1.0/direct?q=" + cityName + "&limit=5&appid=" + APIkey;
 
     fetch(firstApi).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
-                var log = data[0].lon;
+                var lon = data[0].lon;
                 var lat = data[0].lat;
-                getMainData(lat, log, cityName)
+                getMainData(lat, lon, cityName)
             });
-            
+
+        } else {
+            return response;
         }
-    })
+    });
+};
+
+// function involving OneCall API
+var getMainData = function (lat, lon, cityName) {
+    var secondApi = rootURL + "/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" APIkey;
+    
+
+
 }
 
 
