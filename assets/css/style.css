@@ -17,3 +17,26 @@ header {
     margin: 10px;
 }
 
+.green {
+    background-color: green;
+    color: white;
+}
+
+.yellow {
+    background-color: yellow;
+    color: white;
+}
+
+.red {
+    background-color: red;
+    color: white;
+}
+
+.mainDisplay {
+    border: solid 5px black;
+    margin: 25px;
+    padding: 15px;
+}
+
+
+
