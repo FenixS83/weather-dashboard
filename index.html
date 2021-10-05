@@ -1,73 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+<!--styling with bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
-
 <body class="container">
     <header class="header">
         <h1 class="heading">Weather Dashboard</h1>
     </header>
-
     <main>
-
         <div class="row">
             <div class="col col-md-3">
-                <div class="card" id="searchCard">
-                    <h3 class="card-header text-uppercase">Search for a City:</h3>
+                <div class="card" id="searchBox">
+                    <h5 class="card-header text-uppercase">Search for a City: </h5>
                     <form id="user-form" class="card-body">
-                        <input name="search" id="searchCity" type="text" class="form-input input-group mb-3" placeholder="Denver"/>
-                        <button type="submit" class="btn-primary" id="searchBtn">Search</button>
-
+                        <!--Added placeholder of San Diego like in the mock up-->
+                        <input name="search" id="city-search" type="text" class="form-input input-group mb-3 trim" placeholder="San Diego"/>
+                        <button type="submit" class="btn-primary " id="searchBtn">Search</button>
                     </form>
-
                 </div>
-
                 <hr>
-
-                <!-- div for dynamic history buttons -->
                 <div id="historyButtons">
+                    <!--div for dynamic history buttons-->
                 </div>
-
             </div>
-
-
-            <div class="col col-md-8">
-                <!-- div for display -->
+            <div class="col col-md-8">  
                 <div class="container main">
+                    <!--div for display-->
                     <div class="col" id="boldData"><b></b></div>
                     <div class="col" id="tempMain"></div>
                     <br>
                     <div class="col" id="windMain"></div>
                     <br>
+                    <div class="col" id="humidMain"></div>
+                    <br>
                     <span class="col" id="uvMain"></span>
-
-                </div>
-
-                <!-- div for 5 day forecast -->
+                </div>             
                 <div class="col">
                     <div class="container">
-                        <div class="row" id="forecast">
+                        <!--div for 5 day forcast-->
+                        <div class="row" id="forcast">
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
         </div>
-
     </main>
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
+    <!--links to js and jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
-
-
 </html>

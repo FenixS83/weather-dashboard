@@ -1,55 +1,47 @@
 header {
     display: flex;
     justify-content: center;
-    background: linear-gradient(#4169e1, #8641e1);
+    background: linear-gradient(-90deg, #18019b, #539df1);
     padding: 15px;
     color: aliceblue;
     margin-bottom: 15px;
 }
 
-#forecast {
+#forcast{
     justify-content: space-between;
 }
-
-.fBlock {
-    background-color: grey;
+.fBlock{
+    background-color: rgb(81, 78, 95);
     color: white;
     margin: 10px;
 }
 
-.green {
+.green{
     background-color: green;
-    color: white;
-}
-
-.yellow {
-    background-color: yellow;
-    color: white;
-}
-
-.red {
+    color: rgba(255, 255, 255, 0.925);
+  }
+.yellow{
+    background-color: rgb(211, 211, 64);
+    color: rgba(255, 255, 255, 0.918);
+  }
+.red{
     background-color: red;
-    color: white;
+    color: rgba(255, 255, 255, 0.932);
+  }
+#searchBtn,.buttons{
+    width: 100%;
+    border-radius: 8px;
 }
-
-.mainDisplay {
+.mainDisplay{
     border: solid 5px black;
     margin: 25px;
     padding: 15px;
 }
-
-.bold {
+.bold{
     font-weight: bold;
     font-size: large;
 }
-
-.color { 
-    padding: 8px 25px;
+.color{
+    padding:  8px 25px;
     border-radius: 10px;
 }
-
-#searchBtn, .buttons {
-    width: 100%;
-    border-radius: 8px;
-}
-
