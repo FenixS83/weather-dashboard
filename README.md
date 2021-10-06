@@ -24,4 +24,4 @@ Third party APIs are essential tools in any developers belt, they allow users to
 ![The Weather Dashboard contains a blue header with white text.  There is a box for the user to enter desired city name with a blue search button beneath it.  Previously searched cities are stored in the area directly below the search field.  To the right of the search field is the large box displaying current day forecast. Below current day forecast there are grey columns containing the five day forecast.] (./assets/images/Image 10-5-21 at 9.13 PM.jpg)
 
 ### Link to live website
-
+https://fenixs83.github.io/weather-dashboard/
