@@ -21,7 +21,7 @@ A weather dashboard can be very helpful in monitoring current and future weather
 Third party APIs are essential tools in any developers belt, they allow users to make requests and gain access to their data.  This endeavor allowed me to become more familiar with using APIs in my projects.  Over the course of completing this task for the client I have gained valuable knowledge on proper use of APIs. I'm sure to use this knowledge on many future projects.
 
 ### Screenshot of Weather Dashboard
-![The Weather Dashboard contains a blue header with white text.  There is a box for the user to enter desired city name with a blue search button beneath it.  Previously searched cities are stored in the area directly below the search field.  To the right of the search field is the large box displaying current day forecast. Below current day forecast there are grey columns containing the five day forecast.] (./assets/images/Image 10-5-21 at 9.13 PM.jpg)
+![The Weather Dashboard contains a blue header with white text.  There is a box for the user to enter desired city name with a blue search button beneath it.  Previously searched cities are stored in the area directly below the search field.  To the right of the search field is the large box displaying current day forecast. Below current day forecast there are grey columns containing the five day forecast.](weather-dashboard/assets/images/weather-dashboard-screenshot2.png)
 
 ### Link to live website
 https://fenixs83.github.io/weather-dashboard/
