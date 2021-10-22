@@ -1,18 +1,22 @@
-// Api elements
 var APIkey = `ea3cc374537ac734a5e9057bfff093d4`;
+var rootUrl = `https://api.openweathermap.org`;
+var week = [];
 
 //DOM elements
-var searchBtnEl = document.getElementById("searchBtn")
-var citysearchEl = document.getElementById("city-search")
-var boldDataEl = document.getElementById("boldData")
-var tempMainEl = document.getElementById("tempMain")
-var windMainEl = document.getElementById("windMain")
-var humidMainEl = document.getElementById("humidMain")
-var uvMainEl = document.getElementById("uvMain")
-var forcastEl = document.getElementById("forcast")
-var forcastBlock = document.createElement("div")
-var colorBlock = document.querySelector(".color")
+var searchForm = document.querySelector(`#search-form`);
+var searchInput = document.querySelector(`#search-input`);
+var currentWeather = document.querySelector(`#today`);
+var historyContainer = $(`#history`);
+var citySearch = document.querySelector(`#searched-city`);
+var currentTemp = document.querySelector(`#temp`);
+var currentWind = document.querySelector(`#wind`);
+var currentHumidity = document.querySelector(`#humidity`);
+var currentUVI = document.querySelector(`#uv`);
+var uviTitle = document.querySelector(`#uv-title`);
+var currentConditions = $(`#current-conditions`);
+var forecastWeather = $(`#forecast`);
 
+// var colorBlock = document.querySelector(`.color`)
 searchHistoryBtn();
 var appDate = function (time) {
     var displayDate = new Date();
@@ -30,10 +34,10 @@ var formSubmitHandler = function (event) {
     var cityName = citysearchEl.value.trim();
     if (cityName) {
         getInitialData(cityName);
-        citysearchEl.value = "";
+        citysearchEl.value = ``;
         history(cityName);
     } else {
-        alert("Please enter a valid city");
+        alert(`Please enter a valid city`);
     }
 };
 //initial API request
@@ -60,67 +64,67 @@ var getMainData = function (lat, log, cityName) {
         }).then(function (data) {
             console.log(data);
 
-            boldDataEl.innerHTML = `<span class = "bold">${cityName}    (${appDate(data.current.dt)})  </span>   <img src="https://openweathermap.org/img/w/${data.current.weather[0].icon}.png" /> `
+            boldDataEl.innerHTML = `<span class = `bold`>${cityName}    (${appDate(data.current.dt)})  </span>   <img src=`https://openweathermap.org/img/w/${data.current.weather[0].icon}.png` /> `
             tempMainEl.innerHTML = `Temp: ${data.current.temp} &#186F`
             windMainEl.innerHTML = `Wind: ${data.current.wind_speed} MPH`
             humidMainEl.innerHTML = `Humidity: ${data.current.humidity} %`
-            uvMainEl.innerHTML = `UV Index: <span class = "color">      ${data.current.uvi}     </span>`
-            $(".main").addClass("mainDisplay")
+            uvMainEl.innerHTML = `UV Index: <span class = `color`>      ${data.current.uvi}     </span>`
+            $(`.main`).addClass(`mainDisplay`)
 
             //colors for the different UV numbers
 
             if (data.current.uvi <= 2) {
-                $(".color").addClass("green");
-                $(".color").removeClass("yellow");
-                $(".color").removeClass("red");
+                $(`.color`).addClass(`green`);
+                $(`.color`).removeClass(`yellow`);
+                $(`.color`).removeClass(`red`);
             } else if (data.current.uvi > 5) {
-                $(".color").addClass("red");
-                $(".color").removeClass("yellow");
-                $(".color").removeClass("green");
+                $(`.color`).addClass(`red`);
+                $(`.color`).removeClass(`yellow`);
+                $(`.color`).removeClass(`green`);
             } else {
-                $(".color").addClass("yellow");
-                $(".color").removeClass("green");
-                $(".color").removeClass("red");
+                $(`.color`).addClass(`yellow`);
+                $(`.color`).removeClass(`green`);
+                $(`.color`).removeClass(`red`);
             }
             $(forcastBlock).empty()
             for (let i = 1; i < 6; i++) {
-                var forcastBlock = document.createElement("div")
-                forcastBlock.classList.add("fBlock")
-                forcastBlock.classList.add("col")
+                var forcastBlock = document.createElement(`div`)
+                forcastBlock.classList.add(`fBlock`)
+                forcastBlock.classList.add(`col`)
                 $(forcastBlock).append(appDate(data.daily[i].dt));
-                $(forcastBlock).append(`<img src="https://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png"/>`);
-                $(forcastBlock).append("<p>Temp: " + data.daily[i].temp.day + " °F</p>");
-                $(forcastBlock).append("<p>Wind: " + data.daily[i].wind_speed + " MPH</p>");
-                $(forcastBlock).append("<p>Humidity: " + data.daily[i].humidity + " %</p>");
+                $(forcastBlock).append(`<img src=`https://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png`/>`);
+                $(forcastBlock).append(`<p>Temp: ` + data.daily[i].temp.day + ` °F</p>`);
+                $(forcastBlock).append(`<p>Wind: ` + data.daily[i].wind_speed + ` MPH</p>`);
+                $(forcastBlock).append(`<p>Humidity: ` + data.daily[i].humidity + ` %</p>`);
                 $(forcastEl).append(forcastBlock)
             }
         });
 }
 
 function history(cityName) {
-    $("#historyButtons").empty();
-    var savedCity = localStorage.getItem("cities")
+    $(`#historyButtons`).empty();
+    var savedCity = localStorage.getItem(`cities`)
     var cityConditional = savedCity ? JSON.parse(savedCity) : [];
     var currentCity = { cities: cityName }
     cityConditional.push(currentCity);
-    localStorage.setItem("cities", JSON.stringify(cityConditional))
+    localStorage.setItem(`cities`, JSON.stringify(cityConditional))
     searchHistoryBtn()
 }
 
 function searchHistoryBtn() {
-    var cityList = localStorage.getItem("cities")
+    var cityList = localStorage.getItem(`cities`)
     listConditional = cityList ? JSON.parse(cityList) : []
-    console.log("listConditional")
+    console.log(`listConditional`)
     for (let i = 0; i < listConditional.length; i++) {
-        var historyBtn = document.createElement("button")
-        historyBtn.setAttribute("data", (listConditional[i].cities))
-        historyBtn.classList.add("buttons")
+        var historyBtn = document.createElement(`button`)
+        historyBtn.setAttribute(`data`, (listConditional[i].cities))
+        historyBtn.classList.add(`buttons`)
         historyBtn.textContent = (listConditional[i].cities)
-        $("#historyButtons").append(historyBtn);
+        $(`#historyButtons`).append(historyBtn);
     }
 }
 
-$("#historyButtons").on("click", function (event) {
+$(`#historyButtons`).on(`click`, function (event) {
     getInitialData(event.target.textContent)
 })
 
