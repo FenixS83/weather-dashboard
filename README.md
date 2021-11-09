@@ -1,27 +1,92 @@
-# weather-dashboard
+# Weather Dashboard
 
-## Contents
-1. Overview
-2. Explanation of task
-3. Benefit of Weather Dashboard
-4. Personal benefit from making Weather Dashboard
-5. Screenshot of Weather Dashboard
-6. Link to live website
+  ![GitHub:MIT](https://img.shields.io/github/license/FenixS83/readme-generator?style=flat-square)
 
-### Overview
-Create a functioning weather dashboard using weather API.  
+  ## Description
 
-### Explanation of task
-For this project I started from blank documents and used a weather API to build a weather dashboard.  This dashboard incorporates local storage so that previously searched cities can easily be viewed in future visits.  
+  Create a functioning weather dashboard using weather Api.
+  
+  Click the link below to visit my deployed page.
 
-### Benefit of Weather Dashboard
-A weather dashboard can be very helpful in monitoring current and future weather patterns which in turn allows you to better plan your activities and wardrobe accordingly.  It allows a user to see the current and five day forecast for temperature, wind speed and humidity. The current day forecast also includes an easy to read UV index indicator.
+  <!-- [URL](undefined) -->
 
-### Personal benefit from making Weather Dashboard
-Third party APIs are essential tools in any developers belt, they allow users to make requests and gain access to their data.  This endeavor allowed me to become more familiar with using APIs in my projects.  Over the course of completing this task for the client I have gained valuable knowledge on proper use of APIs. I'm sure to use this knowledge on many future projects.
+  ## Table of Contents
+  
+  * [Goals](#goals)
 
-### Screenshot of Weather Dashboard
-![The Weather Dashboard contains a blue header with white text.  There is a box for the user to enter desired city name with a blue search button beneath it.  Previously searched cities are stored in the area directly below the search field.  To the right of the search field is the large box displaying current day forecast. Below current day forecast there are grey columns containing the five day forecast.](weather-dashboard/assets/images/weather-dashboard-screenshot2.png)
+  * [Usage](#usage) 
 
-### Link to live website
-https://fenixs83.github.io/weather-dashboard/
+  * [Installation](#installation)  
+
+  * [Test](#test)
+
+  * [Problems](#problems)
+
+  * [Visualization](#visualization)
+
+  * [Acknowledgements](#acknowledgements)
+
+  * [Contributions](#contributions)
+
+  * [Resources](#resources)
+
+  * [License](#license) 
+
+  * [Contact](#contact) 
+
+  
+  ## Goals
+
+  For this project I started from scratch and used a weather API to build a weather dashboard.  This dashboard incorporates local storage so that previously searched cities an easily be viewed in future visits.
+
+  ## Motivation
+
+  A weather dashboard can be very helpful in monitoring current and future weather pattersn which in turn allows you to better plan your activities and wardrobe accordingly. It allows a user to see the current and five day forecast for temperature, wind speed and humitiy.  The current day forecast also includes and easy to read UV index indicator.
+
+  ## Usage
+
+  This weather dashboard can be used to get current and future forecast.  Third party APIs are essential tools in any developers belt, they allow users to make requests and gain access to data.  This endavor allowed me to become more familiar with using APIs in my projects. 
+
+  ## Installation
+  
+  No installation needed, simply open in browser.  
+
+  ## Test
+
+  N/A
+
+  ## Problems
+
+  Over the course of this project I learned a great deal about the functioning of APIs.  I'm now much better prepared to use them in my future projects.
+
+  ## Visualization
+
+  placeholder to add images or other media
+
+  ## Acknowledgements
+
+  Fenix Sampson
+
+  ## Contributions
+
+  Email me or submit a pull request
+
+  ## Resources
+ 
+  OpenWeatherAPI
+
+  ## License
+
+  ![GitHub:MIT](https://img.shields.io/github/license/FenixS83/readme-generator?style=flat-square)
+
+  This projet uses MIT. 
+  
+  The link to the License can be found here (https://opensource.org/licenses/MIT)
+
+  ## Contact
+  
+  GitHub Username: FenixS83 [@FenixS83](https://github.com/FenixS83)
+
+  fenix.sampson@gmail.com
+
+
