@@ -8,7 +8,7 @@
   
   Click the link below to visit my deployed page.
 
-  <!-- [URL](undefined) -->
+  https://fenixs83.github.io/weather-dashboard/
 
   ## Table of Contents
   
